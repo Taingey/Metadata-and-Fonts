@@ -5,7 +5,7 @@ import { UserType } from "@/types/users";
 import UserCard from "@/components/cards/UserCardComponent";
 
 async function fetchUsers() {
-  const users = await fetch("https://jsonplaceholder.org/users", {
+  const users = await fetch("https://jsonplaceholder.typicode.com/users", {
     cache: "no-store"
   });
   const res = await users.json();

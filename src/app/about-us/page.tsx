@@ -7,7 +7,7 @@ const page = () => {
     <div>
       About Page
       {/* dak oy error  */}
-      <Button color="primary" onClick={gdsdgjd}>
+      <Button color="primary">
         Error Button
       </Button>
     </div>

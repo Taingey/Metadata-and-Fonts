@@ -23,7 +23,7 @@ export default function NavbarComponent() {
           <Image width={40} className="mr-4 rounded-full" height={40} src={"/assets/pic.jpg"} alt={""} />
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarContent className="sm:flex gap-4" justify="center">
           {
             navbarItem.map((item,index : any)=>(
               <NavbarItem key={index}>
