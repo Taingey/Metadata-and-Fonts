@@ -5,6 +5,7 @@ import { ProductType } from "@/types/product";
 import { Suspense } from "react";
 import LoadingComponent from "../loading";
 import Link from "next/link";
+import { Metadata } from "next";
 
 async function fetchProduct() {
   const product = await fetch("https://dummyjson.com/products?limit=100", {
@@ -14,9 +15,14 @@ async function fetchProduct() {
   return res.products;
 }
 
+const metadata: Metadata = {
+  title: "Product",
+  description: "This is Product shop",
+  keywords: ['shop','ecommerce', 'sell']
+};
+
 export default async function Home() {
   const product = await fetchProduct();
-
   return (
     <>
       <div className="mt-10 flex justify-center flex-wrap gap-5">
@@ -25,7 +31,7 @@ export default async function Home() {
           {product?.map((pro: ProductType) => {
             return (
               <Link href={`/product/${pro.id}`} key={pro.id}>
-                <CardComponent thumbnail={pro.thumbnail} title={pro.title} />
+                <CardComponent title={pro.title} thumbnail={pro.thumbnail} />
               </Link>
             );
           })}

@@ -1,17 +1,16 @@
-"use client";
 import React from "react";
-import { Button } from "@nextui-org/react";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  icons: {
+    icon: "/assets/pic.jph"
+  },
+  title: "About",
+  description: "This is About page",
+  keywords: ["shop", "ecommerce", "sell"]
+};
 const page = () => {
-  return (
-    <div>
-      About Page
-      {/* dak oy error  */}
-      <Button color="primary">
-        Error Button
-      </Button>
-    </div>
-  );
+  return <div>About Page</div>;
 };
 
 export default page;
